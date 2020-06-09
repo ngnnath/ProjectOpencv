@@ -20,7 +20,7 @@ eyes_cascade=DEFAULT_EYE_CLASSIFIER
 face_cascade = cv2.CascadeClassifier(face_cascade)
 eye_cascade = cv2.CascadeClassifier(eyes_cascade)
 
-video_capture = cv2.VideoCapture(0)
+video_capture = cv2.VideoCapture(-1)
 
 while (video_capture.isOpened()):
 

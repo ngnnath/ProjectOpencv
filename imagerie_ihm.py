@@ -201,7 +201,7 @@ class Ui_MainWindow(object):
         Signal for 'face detection video' filter
         """
         print("\n  in face_detection_video()")
-        cmd="py filters/filtre_detection_visage-video/face_img.py "
+        cmd="python filters/filtre_detection_visage-video/face_img.py "
         subprocess.check_output(cmd, shell=True)
         
     @pyqtSlot()
@@ -211,7 +211,7 @@ class Ui_MainWindow(object):
         """
         print("\n  in face_detection_image()")
         print(self.current_image_pathname)
-        cmd="py filters/filtre_detection_visage/face_img.py "+self.current_image_pathname
+        cmd="python filters/filtre_detection_visage/face_img.py "+self.current_image_pathname
         subprocess.check_output(cmd, shell=True)
         copy("filters/filtre_detection_visage/resultat.png", self.current_directory+"\\resultat.png")
         self.update_image("./filters/filtre_detection_visage/resultat.png")
@@ -241,7 +241,7 @@ class Ui_MainWindow(object):
         print(self.current_directory)  
 		
 		#commande a executer
-        batcmd="py filters/filtre_vacances/filtre.py "+str(self.current_image_pathname)
+        batcmd="python ./filters/filtre_vacances/filtre.py "+str(self.current_image_pathname)
         subprocess.check_output(batcmd, shell=True)
 		#copy du fichier 
         copy("filters/filtre_vacances/resultat.png", self.current_directory+"\\resultat.png")
@@ -251,14 +251,14 @@ class Ui_MainWindow(object):
     def face_detection_eye(self):       
         print("\n  in face_detection_eye()")
         print(self.current_image_pathname)
-        cmd="py filters/filtre_lunette/eyes_img.py "+self.current_image_pathname
+        cmd="python filters/filtre_lunette/eyes_img.py "+self.current_image_pathname
         subprocess.check_output(cmd, shell=True)
         copy("filters/filtre_lunette/resultat.png", self.current_directory+"\\resultat.png")
         self.update_image("./filters/filtre_lunette/resultat.png") 
 		
     def face_detection_eye_video(self): 	
         print("\n  in face_detection_eye_video()")
-        cmd="py filters/filtre_lunette-video/eyes_img.py "
+        cmd="python filters/filtre_lunette-video/eyes_img.py "
         subprocess.check_output(cmd, shell=True)	 
 		
 if __name__ == "__main__":
